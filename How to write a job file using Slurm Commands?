@@ -1,0 +1,69 @@
+#!/bin/bash
+######################################
+# Example of a SLURM job script 
+# 
+# SBATCH -p public
+#	Here it is a public partition which may be used to execute this job.
+# 
+# SBATCH -J job_name
+#	This is to define a job name 
+# 
+# SBATCH -o JOB.o%j
+#	The output file will be saved in this format
+# 
+# SBATCH -e JOB.e%j
+#	Any error file would be in this format. 
+#
+# SBATCH --qos general
+#	QOS is the quality of service, where your job file gets submitted in one of the queues present such as debug, general, 
+#	large. Depending on the need one of then can be replaced in the place of general. 
+#
+#
+# SBATCH --exclusive
+#	This is used to have a compute node dedicated for this job and not allowing other jobs to be happening. 
+#	
+# 
+# SBATCH -t 80:00:00
+#	Shows the WallTime Limit for the job in hh:mm:ss.
+#
+# SBATCH -n 84
+#	The total number of mpi tasks.
+#
+# SBATCH -N 3
+#	The number of compute nodes requestef for getting the job done
+#
+# SBATCH --ntasks-per-node 28
+#	Submitting the number of tasks per node that are to be done
+#
+# SBATCH -C <enter-your-node-number>
+#	To request a particular compute node 
+#	(Also can request c6320, r420, r720, and r730 compute nodes)
+#
+# SBATCH --mail-user=user@yourinstitution.edu
+#	Sets up email notification once your job is submitted
+#
+#
+# SBATCH --mail-type=ALL
+# Email user when the job starts, ends and incase of any interruptions
+#
+# SBATCH --mail-type=begin
+#	Email user when job starts
+#
+# SBATCH --mail-type=end
+#	Email user when job ends
+#Once we define all the commands we want to use
+#Here we write the script we want in the format
+######################################
+#SBATCH -J my_example_job 
+#SBATCH -o ./out/example_job.o%j
+#SBATCH -e my_example_job.e%j
+#SBATCH -p public
+#SBATCH --qos general
+#SBATCH -N 1
+#SBATCH -n 1
+#SBATCH -t 12:00:00
+ 
+### Loading required modules. 
+module load python/3.4.1
+ 
+test.py
