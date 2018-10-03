@@ -1,0 +1,12 @@
+#To load modules use commands as following once your prompt is ready. 
+
+$ module avail -----> lists the available modules 
+$ module load <module_name> ----> loading module
+$ module unload <module_name> ----> unloading module 
+$ module list ----> lists the module that are loaded 
+$ which <module_name> ---> shows the path and the actual installed version of R
+# incase if you have loaded R 
+$ R (and hit enter) 
+# your will be directed to the R workspace and started working on R. 
+# to quit use
+> q() (it will ask whether you want to save the workspace) 
