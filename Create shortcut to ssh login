@@ -1,0 +1,13 @@
+How to create a shortcut name to login using ssh is here: 
+
+Follow the steps below: 
+
+Command 1: $ vim ~/.bash_aliases
+## Incase it says that the package vim is not available then, do the $ sudo apt install vim
+Command 2: Once you do the vim command it redirects to a writing space and just type in : 
+        alias <shortcut_name>= 'ssh username@ipaddress.com'
+        After you type the above statement you need to save and exit, click ESC and type :x
+Command 3: After you have completed doing the alias, you need to reboot it by typing:
+          $ source ~/.bash_aliases
+Now exit the terminal and come back to type in your shortcutname and you can directly enter the password here. 
+        
