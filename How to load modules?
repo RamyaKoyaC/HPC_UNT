@@ -4,6 +4,8 @@ $ module avail -----> lists the available modules
 $ module load <module_name> ----> loading module
 $ module unload <module_name> ----> unloading module 
 $ module list ----> lists the module that are loaded 
+$ module spider ---> it gives out the detailed list of modules so that you could go along
+$ module spider <module_name> --> gives detailed information about the particular module
 $ which <module_name> ---> shows the path and the actual installed version of R
 # incase if you have loaded R 
 $ R (and hit enter) 
